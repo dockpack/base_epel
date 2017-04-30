@@ -1,0 +1,31 @@
+---
+
+- name: warning
+  debug:
+    msg: 'EPEL is for RedHat-like operating systems.'
+
+
+# The proxy server - proxy server:port number
+- name: use a proxy for yum
+  when: base_proxy_url is defined and ansible_os_family == 'RedHat'
+  lineinfile:
+    dest: /etc/yum.conf
+    state: present
+    regexp: '^proxy'
+    line: "proxy={{  base_proxy_url }}"
+
+- name: no proxy for yum
+  when: base_proxy_url is undefined and ansible_os_family == 'RedHat'
+  lineinfile:
+    dest: /etc/yum.conf
+    state: absent
+    regexp: '^proxy'
+
+# We need this for python-httplib2, which is a dependancy for uri
+# Can be removed if we use Ansible 2.1
+- name: Install EPEL repository
+
+  become: yes
+  yum: name=epel-release state=present update_cache=yes
+  tags:
+    - server

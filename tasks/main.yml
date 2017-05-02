@@ -24,8 +24,6 @@
 # We need this for python-httplib2, which is a dependancy for uri
 # Can be removed if we use Ansible 2.1
 - name: Install EPEL repository
-
-  become: yes
   yum: name=epel-release state=present update_cache=yes
   tags:
     - server

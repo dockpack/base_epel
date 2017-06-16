@@ -7,6 +7,7 @@
 
 # The proxy server - proxy server:port number
 - name: use a proxy for yum
+  when: ansible_os_family == 'RedHat'
   when: base_proxy_url is defined and ansible_os_family == 'RedHat'
   lineinfile:
     dest: /etc/yum.conf
@@ -24,6 +25,7 @@
 # We need this for python-httplib2, which is a dependancy for uri
 # Can be removed if we use Ansible 2.1
 - name: Install EPEL repository
+  when: ansible_os_family == 'RedHat'
   yum:
     name: epel-release
     state: present

@@ -1,9 +1,9 @@
 ---
-
+# Standards: 0.2
 galaxy_info:
   author: bbaassssiiee
   description: Extra Packages for RedHat.
-  company:
+  company: bbaassssiiee
 
   license: MIT
 

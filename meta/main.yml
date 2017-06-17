@@ -17,5 +17,8 @@ galaxy_info:
   galaxy_tags:
     - system
     - development
+    - rpm
+    - centos
+    - enterprise
 
 dependencies: []

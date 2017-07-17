@@ -21,8 +21,6 @@
     state: absent
     regexp: '^proxy'
 
-# We need this for python-httplib2, which is a dependancy for uri
-# Can be removed if we use Ansible 2.1
 - name: Install EPEL repository
   when: ansible_os_family == 'RedHat'
   yum:
@@ -31,3 +29,8 @@
     update_cache: yes
   tags:
     - server
+
+- name: enable valid base urls
+  shell: "s+ed -i 's/#baseurl/baseurl/g' /etc/yum.repos.d/*.repo"
+  args:
+    creates: /etc/yum.repos.d/epel.repo

@@ -7,15 +7,15 @@
 
 # The proxy server - proxy server:port number
 - name: use a proxy for yum
-  when: base_proxy_url is defined and ansible_os_family == 'RedHat'
+  when: https_proxy_url is defined and ansible_os_family == 'RedHat'
   lineinfile:
     dest: /etc/yum.conf
     state: present
     regexp: '^proxy'
-    line: "proxy={{  base_proxy_url }}"
+    line: "proxy=https://{{  https_proxy_url }}"
 
 - name: no proxy for yum
-  when: base_proxy_url is undefined and ansible_os_family == 'RedHat'
+  when: https_proxy_url is undefined and ansible_os_family == 'RedHat'
   lineinfile:
     dest: /etc/yum.conf
     state: absent

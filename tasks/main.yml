@@ -31,6 +31,6 @@
     - server
 
 - name: enable valid base urls
-  shell: "s+ed -i 's/#baseurl/baseurl/g' /etc/yum.repos.d/*.repo"
+  shell: "sed -i 's/#baseurl/baseurl/g' /etc/yum.repos.d/*.repo"
   args:
     creates: /etc/yum.repos.d/epel.repo

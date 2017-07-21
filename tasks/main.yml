@@ -21,8 +21,13 @@
     state: absent
     regexp: '^proxy'
 
+- name: Detect Travis
+  when: lookup('env','TRAVIS')
+  set_fact:
+    travis: true
+
 - name: Install EPEL repository
-  when: ansible_distribution == 'CentOS'
+  when: ansible_distribution == 'CentOS' or travis
   yum:
     name: epel-release
     state: present

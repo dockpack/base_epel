@@ -26,8 +26,13 @@
   set_fact:
     travis: true
 
+- name: Detect if EPEL is OK
+  when: travis is defined or ansible_distribution == 'CentOS'
+  set_fact:
+    epel: ok
+
 - name: Install EPEL repository
-  when: ansible_distribution == 'CentOS' or ( travis is defined and ansible_os_family != 'Ubuntu' )
+  when: epel is defined and ansible_os_family != 'Ubuntu'
   yum:
     name: epel-release
     state: present

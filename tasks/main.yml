@@ -27,7 +27,7 @@
     travis: true
 
 - name: Install EPEL repository
-  when: ansible_distribution == 'CentOS' or travis
+  when: ansible_distribution == 'CentOS' or travis is defined
   yum:
     name: epel-release
     state: present

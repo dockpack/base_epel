@@ -1,3 +1,6 @@
+![Build Status](https://api.travis-ci.org/dockpack/base_epel.svg)
+
+base_epel
 =========
 
 base_epel is a role that other base roles depend on.

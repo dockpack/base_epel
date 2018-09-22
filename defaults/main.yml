@@ -1,7 +1,4 @@
 ---
 
-# define or undefine the base_proxy_url, bu do it on the block
-#base_proxy_url: http://172.16.1.2:8080
-
-#  https_proxy_url: ""
-#  https_proxy_url: ""
+#  define or undefine the yum_proxy_url
+#  yum_proxy_url: http://172.16.1.2:8080

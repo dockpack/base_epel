@@ -1,3 +1,6 @@
+![Build Status](https://api.travis-ci.org/dockpack/base_epel.svg)
+
+base_epel
 =========
 
 base_epel is a role that other base roles depend on.
@@ -10,19 +13,15 @@ RHEL- like system
 
 Role Variables
 --------------
-define or undefine the base proxy url, but do it on the block, or don't
-     base_proxy_url: http://172.16.1.2:8080
+define or undefine the yum proxy
 
-     base_proxy_env:
+     yum_proxy_url: http://proxy.example.com:3128
 
-        http_proxy: "{{ base_proxy_url | default(omit) }}"
-
-        https_proxy: "{{ base_proxy_url | default(omit) }}"
 
 Dependencies
 ------------
 
-base_common is a role that other base roles depend on.
+base_common is a role that other base roles depend on for RHEL behind a proxy.
 
 Example Usage
 ----------------

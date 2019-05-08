@@ -37,6 +37,10 @@
     name: epel-release
     state: present
     update_cache: yes
+  register: network_access
+  until: network_access is success
+  retries: 10
+  delay: 2
   tags:
     - server
 

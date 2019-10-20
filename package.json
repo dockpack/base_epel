@@ -1,6 +1,6 @@
 {
   "name": "dockpack.base_epel",
-  "version": "0.3.0",
+  "version": "v0.2.9",
   "scripts": {
     "release": "release-it",
     "snyk-protect": "snyk protect",

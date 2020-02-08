@@ -6,9 +6,12 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: molecule_centos7
+  - name: base-epel-centos7
     image: centos:7
-    privileged: True
+    privileged: true
+  - name: base-epel-centos6
+    image: centos:6
+    privileged: true
 provisioner:
   name: ansible
   config_options:

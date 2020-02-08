@@ -1,3 +1,4 @@
+[![Galaxy](https://img.shields.io/badge/galaxy-dockpack.base__epel-blue.svg?style=flat)](https://galaxy.ansible.com/dockpack/base_epel)
 ![Build Status](https://api.travis-ci.org/dockpack/base_epel.svg)
 
 base_epel

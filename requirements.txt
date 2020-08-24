@@ -1,4 +1,4 @@
 # these python extensions are required for testing
 tox
-molecule
-docker
+molecule==2.22
+docker==4.2.2

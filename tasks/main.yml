@@ -13,6 +13,7 @@
     state: present
     regexp: '^proxy'
     line: "proxy={{  yum_proxy_url }}"
+    mode: 0644
 
 - name: no proxy for yum
   when: yum_proxy_url is undefined and ansible_os_family == 'RedHat'

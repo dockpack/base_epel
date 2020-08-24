@@ -2,16 +2,12 @@
   "name": "dockpack.base_epel",
   "version": "1.0.2",
   "scripts": {
-    "release": "release-it",
-    "snyk-protect": "snyk protect",
-    "prepublish": "npm run snyk-protect"
+    "release": "release-it"
   },
   "devDependencies": {
     "release-it": "^7.6.1"
   },
   "dependencies": {
     "npm": "^6.4.1",
-    "snyk": "^1.236.1"
-  },
-  "snyk": true
+  }
 }

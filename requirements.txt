@@ -1,4 +1,5 @@
 # these python extensions are required for testing
 tox
+sh==1.12.14
 molecule==2.22
 docker==4.2.2

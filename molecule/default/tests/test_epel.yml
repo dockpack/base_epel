@@ -1,0 +1,6 @@
+# Molecule managed
+
+---
+package:
+  epel-release:
+    installed: true

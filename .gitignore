@@ -1,7 +1,5 @@
 .DS_Store
-.molecule/
 .tox
-.yamllint
 package-lock.json
 tasks/.molecule/
 tests/.DS_Store

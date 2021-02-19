@@ -2,7 +2,7 @@
 
 - name: warning
   debug:
-    msg: 'EPEL is for RedHat-like operating systems.'
+    msg: 'EPEL is for RedHat Enterprise/CentOS operating systems.'
 
 
 # The proxy server - proxy server:port number
@@ -28,7 +28,8 @@
     travis: true
 
 - name: Detect if EPEL is OK
-  when: ansible_distribution == 'CentOS'
+  when:
+    - ansible_distribution == 'CentOS'
   set_fact:
     epel: ok
 

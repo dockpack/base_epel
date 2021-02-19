@@ -1,4 +1,5 @@
 ---
+# Standards: 0.2
 dependency:
   name: galaxy
 driver:
@@ -8,8 +9,14 @@ lint: |
   yamllint .
   ansible-lint
 platforms:
+  - name: base-epel-ubi8
+    image: registry.access.redhat.com/ubi8/ubi
+    privileged: true
   - name: base-epel-centos7
-    image: centos:7
+    image: milcom/centos7-systemd
+    privileged: true
+  - name: base-epel-ubuntu
+    image: ubuntu
     privileged: true
 provisioner:
   name: ansible

@@ -1,0 +1,12 @@
+# yamllint disable-file
+---
+file:
+  /bin/sh:
+    exists: true
+package:
+  epel-release:
+{{ if (eq .Env.HOSTNAME "base-epel-centos7") }}
+    installed: true
+{{ else }}
+    installed: false
+{{ end }}

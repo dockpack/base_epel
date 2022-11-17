@@ -1,5 +1,7 @@
 ---
 galaxy_info:
+  role_name: base_epel
+  namespace: dockpack
   author: Bas Meijer
   description: Install EPEL when needed
   company: dockpack
@@ -13,6 +15,7 @@ galaxy_info:
       versions:
         - 6
         - 7
+        - 8
 
   galaxy_tags: []
 

@@ -1,4 +1,10 @@
 ---
-- hosts: all
-  roles:
-    - role: dockpack.base_epel
+- name: Converge
+  hosts: all
+  vars:
+    role_name: "{{ lookup('env', 'MOLECULE_PROJECT_DIRECTORY') | basename }}"
+
+  tasks:
+    - name: "Include {{ role_name }}"
+      ansible.builtin.include_role:
+        name: "{{ role_name }}"
